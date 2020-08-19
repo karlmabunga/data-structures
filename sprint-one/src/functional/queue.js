@@ -20,7 +20,7 @@ var Queue = function() {
       // take our the first thing in enqueue
       var tempHold = storage[deposition];
       delete storage[deposition];
-      // deposition++;
+      deposition++;
       return tempHold;
     }
   };
