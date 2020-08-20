@@ -45,4 +45,4 @@ stackMethods.pop = function() {
 stackMethods.size = function() {
   //  return the postion
   return this.position;
-}
+};
