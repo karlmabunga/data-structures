@@ -9,42 +9,58 @@ var LinkedList = function() {
   list.length = 0;
 
   list.addToTail = function(value) {
-    //    instantiate a new node that sets this.value to value
-    var newNode = new Node(value);
+    let newNode = new Node(value);
 
-    // Base case - Empty List
-    // If *this.head && this.tail === null;
-    if (this.head === null) {
-      //     set this.list.head = this.node
-      this.head = newNode;
-      //     set this.list.tail = this.newNode
-      this.tail = newNode;
-    } else {
+    if (this.head) {
       this.tail.next = newNode;
       this.tail = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
     }
-
-    // increment length
     this.length++;
-    // return this;
   };
 
   list.removeHead = function() {
-    // if empty, do nothing
     if (!this.head) {
       return undefined;
     }
-    // temp = head
-    var temp = this.head;
-    // return former head
-    var formerHead = this.head;
-    // head = head.next
-    this.head = this.head.next;
-    // delete temp
-    delete temp;
-    // decrement the length
+    let temp = this.head;
+    let newHead = this.head.next;
+    this.head = newHead;
     this.length--;
-    return formerHead.value;
+    return this.head;
+
+
+    // // if empty, do nothing
+    // if (!this.head) {
+    //   return undefined;
+    // }
+    // // temp = head
+    // var temp = this.head;
+    // // return former head
+    // var formerHead = this.head;
+    // // head = head.next
+    // this.head = this.head.next;
+    // // delete temp
+    // delete temp;
+    // // decrement the length
+    // this.length--;
+    // return formerHead.value;
+  };
+
+  list.addHead = (val) => {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      let oldHead = this.head;
+      this.head = newNode;
+      this.head.next = oldHead;
+    }
+    this.length++;
+    return newNode;
   };
 
   list.contains = function(target) {
@@ -65,7 +81,6 @@ var LinkedList = function() {
       }
     }
   };
-  return list;
 };
 
 var Node = function(value) {
