@@ -30,23 +30,6 @@ var LinkedList = function() {
     this.head = newHead;
     this.length--;
     return this.head;
-
-
-    // // if empty, do nothing
-    // if (!this.head) {
-    //   return undefined;
-    // }
-    // // temp = head
-    // var temp = this.head;
-    // // return former head
-    // var formerHead = this.head;
-    // // head = head.next
-    // this.head = this.head.next;
-    // // delete temp
-    // delete temp;
-    // // decrement the length
-    // this.length--;
-    // return formerHead.value;
   };
 
   // ADDED THIS
