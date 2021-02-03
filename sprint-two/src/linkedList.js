@@ -49,6 +49,7 @@ var LinkedList = function() {
     // return formerHead.value;
   };
 
+  // ADDED THIS
   list.addHead = (val) => {
     let newNode = new Node(val);
     if (!this.head) {
@@ -61,6 +62,11 @@ var LinkedList = function() {
     }
     this.length++;
     return newNode;
+  };
+
+  // ADDED THIS
+  list.get = (index) => {
+
   };
 
   list.contains = function(target) {
