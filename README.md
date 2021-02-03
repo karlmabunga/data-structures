@@ -1,2 +1,5 @@
-# data-structures
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+# data-structures #
+
+### This is a project that demonstrates common data structure traversing ##
+
+### There are also demonstrations of different instantation patterns in Javascript ##
