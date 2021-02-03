@@ -53,20 +53,15 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
-  // currentNode
     var currentNode = this.head;
-    //Search Loop
     while (currentNode) {
-    //  if target = nodeValue
       if (currentNode.value === target) {
         return true;
       } else {
         currentNode = currentNode.next;
       }
-      // if value is null
       if (currentNode === null) {
         return false;
-      //    return false
       }
     }
   };
