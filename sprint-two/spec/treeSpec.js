@@ -41,4 +41,16 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should correctly use DFS preorder', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.children[0].addChild(7);
+    tree.children[1].addChild(8);
+    expect(tree.DFSpreorder()[0]).to.equal(undefined);
+    expect(tree.DFSpreorder()[1]).to.equal(5);
+    expect(tree.DFSpreorder()[2]).to.equal(7);
+    expect(tree.DFSpreorder()[3]).to.equal(6);
+    expect(tree.DFSpreorder()[4]).to.equal(8);
+  });
+
 });

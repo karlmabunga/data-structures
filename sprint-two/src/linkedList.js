@@ -29,7 +29,24 @@ var LinkedList = function() {
     let newHead = this.head.next;
     this.head = newHead;
     this.length--;
-    return this.head;
+    return temp.value;
+
+
+    // // if empty, do nothing
+    // if (!this.head) {
+    //   return undefined;
+    // }
+    // // temp = head
+    // var temp = this.head;
+    // // return former head
+    // var formerHead = this.head;
+    // // head = head.next
+    // this.head = this.head.next;
+    // // delete temp
+    // delete temp;
+    // // decrement the length
+    // this.length--;
+    // return formerHead.value;
   };
 
   // ADDED THIS
@@ -53,18 +70,25 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+  // currentNode
     var currentNode = this.head;
+    //Search Loop
     while (currentNode) {
+    //  if target = nodeValue
       if (currentNode.value === target) {
         return true;
       } else {
         currentNode = currentNode.next;
       }
+      // if value is null
       if (currentNode === null) {
         return false;
+      //    return false
       }
     }
   };
+
+  return list;
 };
 
 var Node = function(value) {

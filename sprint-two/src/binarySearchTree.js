@@ -47,6 +47,38 @@ binaryTreePrototype.depthFirstLog = function(callBack) {
   }
 };
 
+// ADDED
+
+binaryTreePrototype.DFSpreorder = function() {
+  var results = [];
+  let traverse = function(node) {
+    results.push(node.value);
+    if (node.left) {
+      traverse(node.left);
+    }
+    if (node.right) {
+      traverse(node.right);
+    }
+  };
+  traverse(this);
+  return results;
+};
+
+binaryTreePrototype.DFSpostorder = function() {
+  var results = [];
+  let traverse = function(node) {
+    if (node.left) {
+      traverse(node.left);
+    }
+    if (node.right) {
+      traverse(node.right);
+    }
+    results.push(node.value);
+  };
+  traverse(this);
+  return results;
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */

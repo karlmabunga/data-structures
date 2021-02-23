@@ -42,6 +42,23 @@ treeMethods.traverse = function(callback) {
   }
 };
 
+// ADDED
+
+treeMethods.DFSpreorder = function() {
+  var data = [];
+
+  let traverse = function(node) {
+    data.push(node.value);
+    if (node.children.length) {
+      for (let i = 0; i < node.children.length; i++) {
+        traverse(node.children[i]);
+      }
+    }
+  };
+  traverse(this);
+  return data;
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */
